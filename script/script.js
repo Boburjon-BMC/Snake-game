@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     snake_btn_figura.addEventListener('click', ()=>{
         if(snake_figura[0].classList.contains('active') == true){
-            bobur
+            
         }
         else if(snake_figura[1].classList.contains('active') == true){
             console.log(snake_figura[1])
