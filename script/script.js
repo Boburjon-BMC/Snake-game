@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let user_name_input_taxrirlashx1;
     let fullScreen = false;
     let time_interval;
-    
+
     /* View in fullscreen */
     function openFullscreen() {
         if (elem.requestFullscreen) {
@@ -422,7 +422,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
         ChangeFoodPostion();
-        setIntervalId =  setInterval(initGame, localStorage.getItem('speed'));
+        setIntervalId =  setInterval(initGame, 225);
         document.addEventListener('keydown', functionPlay);
 
 
@@ -494,26 +494,6 @@ document.addEventListener("DOMContentLoaded", function(){
         playBar.style.height = '90%';
         playBar.style.gridTemplate = `repeat(${snake_bar_table_row}, 1fr) / repeat(${snake_bar_table_columun}, 1fr)`;
     }
-
-
-    // speed
-    const snake_speed_input = document.querySelector('.snake_speed');
-    const snake_speed_btn = document.querySelector('.snake_speed_btn');
-    const animation_speed = document.querySelector('.animation_speed');
-    let speed;
-    function snake_speed_funcyion(){
-        speed = +snake_speed_input.value;
-        if(speed >= 1 && speed <=10){
-            snake_speed_input.style.border = '2px solid lime';
-            localStorage.setItem('speed', speed * 100);
-        }
-        else {
-            snake_speed_input.value = '';
-            snake_speed_input.style.border = '2px solid red'
-        }
-    };
-    snake_speed_btn.addEventListener('click', snake_speed_funcyion);
-
     // snake fegura
     const snake_btn_figura = document.querySelector('.snake_btn_figura');
     const snake_bar_figure = document.querySelector('.snake_bar_figure');
@@ -541,7 +521,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     snake_btn_figura.addEventListener('click', ()=>{
         if(snake_figura[0].classList.contains('active') == true){
-            
+            bobur
         }
         else if(snake_figura[1].classList.contains('active') == true){
             console.log(snake_figura[1])
