@@ -1,0 +1,65 @@
+@keyframes animation{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes a_span_snake {
+        0%{
+            font-size:50px;
+        }            
+        50%{
+            font-size:80px;
+        }
+        100%{
+            font-size: 50px;
+        }
+}
+@keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes snake_speed {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 110%;
+    }
+    
+}
+@keyframes play_animation {
+    0%{
+      height: 0;
+    }
+    50%{
+      height: 80%;
+    }
+    100%{
+      height: 0;
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes gameOver{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+      text-shadow:  0px 0px 10px red, 0px 0px 25px red;
+    }
+  }
