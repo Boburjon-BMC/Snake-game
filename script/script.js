@@ -368,6 +368,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         scoreElement.innerHTML = `${score}`;
                         Highfood_number2.innerHTML = `${highScore}`;
                 }
+    
 
                   for (let i = snakeBody.length - 1  ; i > 0; i--) {
                         snakeBody[i] = snakeBody[i - 1];
@@ -388,8 +389,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
                 for (let i = 0; i < snakeBody.length; i++) {
-                        htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
-
+                    if(snake_figura[0].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
+                    }
+                    else if(snake_figura[1].classList.contains('active') == true){
+                        htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
+                        
+                    }
+                     else if(snake_figura[2].classList.contains('active') == true){
+                        htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
+            
+                    }
                         if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0] ){
                                 gmaeOver = true ;
                                 playAudio(snake_game_over)
@@ -419,6 +429,7 @@ document.addEventListener("DOMContentLoaded", function(){
                         velocityY = 1;
                 }
         };
+
 
 
         ChangeFoodPostion();
@@ -498,8 +509,12 @@ document.addEventListener("DOMContentLoaded", function(){
     const snake_btn_figura = document.querySelector('.snake_btn_figura');
     const snake_bar_figure = document.querySelector('.snake_bar_figure');
     const snake_figura = document.querySelectorAll('.snake_figura');
-    const active_figura = document.querySelectorAll('.active_figura')
-
+    const active_figura0 = document.querySelector('.active_figura11')
+    const active_figura1 = document.querySelector('.active_figura12')
+    const active_figura2 = document.querySelector('.active_figura13')
+    const snake = document.querySelectorAll('.snake');
+    const food1 = document.querySelector('.food');
+    
     function hidetabsContent_snake(){
         snake_figura.forEach((element) =>{
             element.classList.remove('active');
@@ -521,19 +536,25 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     snake_btn_figura.addEventListener('click', ()=>{
         if(snake_figura[0].classList.contains('active') == true){
-            
+            active_figura0.classList.add('active');;
+            active_figura1.classList.remove('active');
+            active_figura2.classList.remove('active');
         }
         else if(snake_figura[1].classList.contains('active') == true){
-            console.log(snake_figura[1])
+            active_figura0.classList.remove('active');;
+            active_figura1.classList.add('active');
+            active_figura2.classList.remove('active');
+            snake.style.border = '1px solid black';
+            
         }
          else if(snake_figura[2].classList.contains('active') == true){
-            console.log(snake_figura[2])
+            active_figura0.classList.remove('active');;
+            active_figura1.classList.remove('active');
+            active_figura2.classList.add('active');
+
         }
     
     });
-
-
-
 
 
 

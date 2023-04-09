@@ -1839,7 +1839,13 @@ ul {
 }
 .play_bar .snake{
   background-color: aquamarine;  
-  border-radius: 5px;
+}
+.play_bar .snakeCricle{
+  border-radius: 50%;
+}
+.play_bar .snakeRec{
+  clip-path: polygon(50% 0%, 100% 100%, 0 100%);
+  border-radius: 0;
 }
 .loader {
   width: 106px;
