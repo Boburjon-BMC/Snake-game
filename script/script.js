@@ -27,6 +27,21 @@ document.addEventListener("DOMContentLoaded", function(){
     let fullScreen = false;
     let time_interval;
 
+    const color = [
+        " #CC0000",
+        " #FF9933",
+        " #FFFF33",
+        " #00FF00",
+        " #33FF99",
+        " #00FFFF",
+        " #3333FF",
+        " #FF33FF",
+        " #FF3399",
+        " #FFFFFF",
+        "#0000CC",
+        "#4C0099",
+   ]
+
     /* View in fullscreen */
     function openFullscreen() {
         if (elem.requestFullscreen) {
@@ -390,21 +405,124 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 for (let i = 0; i < snakeBody.length; i++) {
                     if(snake_figura[0].classList.contains('active') == true){
-                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
-                    }
+                        if(color_active[0].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[0]}"></div>`;
+                        }
+                        else if(color_active[1].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[1]}"></div>`;
+                        }
+                        else if(color_active[2].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[2]}"></div>`;
+                        }
+                        else if(color_active[3].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[3]}"></div>`;
+                        }
+                        else if(color_active[4].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[4]}"></div>`;
+                        }
+                        else if(color_active[5].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[5]}"></div>`;
+                        }
+                        else if(color_active[6].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[6]}"></div>`;
+                        }
+                        else if(color_active[7].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[7]}"></div>`;
+                        }
+                        else if(color_active[8].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[8]}"></div>`;
+                        }
+                        else if(color_active[9].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[9]}"></div>`;
+                        }
+                        else if(color_active[10].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[10]}"></div>`;
+                        }
+                        else if(color_active[11].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[11]}"></div>`;
+                        }
+                        }
                     else if(snake_figura[1].classList.contains('active') == true){
-                        htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
-                        
+                        if(color_active[0].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[0]}"></div>`;
+                        }
+                        else if(color_active[1].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[1]}"></div>`;
+                        }
+                        else if(color_active[2].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[2]}"></div>`;
+                        }
+                        else if(color_active[3].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[3]}"></div>`;
+                        }
+                        else if(color_active[4].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[4]}"></div>`;
+                        }
+                        else if(color_active[5].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[5]}"></div>`;
+                        }
+                        else if(color_active[6].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[6]}"></div>`;
+                        }
+                        else if(color_active[7].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[7]}"></div>`;
+                        }
+                        else if(color_active[8].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[8]}"></div>`;
+                        }
+                        else if(color_active[9].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[9]}"></div>`;
+                        }
+                        else if(color_active[10].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[10]}"></div>`;
+                        }
+                        else if(color_active[11].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeCricle" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[11]}"></div>`;
+                        }
                     }
                      else if(snake_figura[2].classList.contains('active') == true){
-                        htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`;
-            
+                        if(color_active[0].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[0]}"></div>`;
+                        }
+                        else if(color_active[1].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[1]}"></div>`;
+                        }
+                        else if(color_active[2].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[2]}"></div>`;
+                        }
+                        else if(color_active[3].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[3]}"></div>`;
+                        }
+                        else if(color_active[4].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[4]}"></div>`;
+                        }
+                        else if(color_active[5].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[5]}"></div>`;
+                        }
+                        else if(color_active[6].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[6]}"></div>`;
+                        }
+                        else if(color_active[7].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[7]}"></div>`;
+                        }
+                        else if(color_active[8].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[8]}"></div>`;
+                        }
+                        else if(color_active[9].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[9]}"></div>`;
+                        }
+                        else if(color_active[10].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[10]}"></div>`;
+                        }
+                        else if(color_active[11].classList.contains('active') == true){
+                            htmlMarkub += `<div class="snake snakeRec" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[11]}"></div>`;
+                        }  
                     }
-                        if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0] ){
-                                gmaeOver = true ;
-                                playAudio(snake_game_over)
-
-                            }
+                    
+                    if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0] ){
+                            gmaeOver = true ;
+                            playAudio(snake_game_over)
+                    }
                 }
                 playBar.innerHTML = htmlMarkub;
         };
@@ -505,6 +623,7 @@ document.addEventListener("DOMContentLoaded", function(){
         playBar.style.height = '90%';
         playBar.style.gridTemplate = `repeat(${snake_bar_table_row}, 1fr) / repeat(${snake_bar_table_columun}, 1fr)`;
     }
+
     // snake fegura
     const snake_btn_figura = document.querySelector('.snake_btn_figura');
     const snake_bar_figure = document.querySelector('.snake_bar_figure');
@@ -514,11 +633,12 @@ document.addEventListener("DOMContentLoaded", function(){
     const active_figura2 = document.querySelector('.active_figura13')
     const snake = document.querySelectorAll('.snake');
     const food1 = document.querySelector('.food');
+    const color_active = document.querySelectorAll('.color_active');
     
     function hidetabsContent_snake(){
         snake_figura.forEach((element) =>{
             element.classList.remove('active');
-        })
+        });
     }
     function showTabContent_snake(i = 0){
         snake_figura[i].classList.add('active');
@@ -544,8 +664,6 @@ document.addEventListener("DOMContentLoaded", function(){
             active_figura0.classList.remove('active');;
             active_figura1.classList.add('active');
             active_figura2.classList.remove('active');
-            snake.style.border = '1px solid black';
-            
         }
          else if(snake_figura[2].classList.contains('active') == true){
             active_figura0.classList.remove('active');;
@@ -556,6 +674,69 @@ document.addEventListener("DOMContentLoaded", function(){
     
     });
 
+
+    // snake color
+    
+    const color_b = document.querySelector('.tab_color');
+    const color_btn_click = document.querySelector('.color_btn');
+    const active_color_snake = document.querySelector('.active_color_snake');
+
+    function hidetabsContent_snake_color(){
+        color_active.forEach(element =>{
+            element.classList.remove('active');
+        });
+
+    }
+    function showTabContent_snake_color(i = 0){
+        color_active[i].classList.add('active');
+        
+    }   
+
+    color_b.addEventListener('click', (element)=>{
+        const target = element.target;
+        if(target && target.classList.contains('color_active')){
+            color_active.forEach((item, index)=>{
+                if(target == item){
+                    hidetabsContent_snake_color();
+                    showTabContent_snake_color(index);
+        }
+      });}
+    });
+    // for(let i = 0; i<=color_active.length; i++){
+    //     if(color_active[i].classList.contains('active')){
+    //         active_color_snake.style.background = color[i];     
+    //     }
+    // }
+
+    color_btn_click.addEventListener('click', (element)=>{
+        if(color_active[0].classList.contains('active') == true){
+            active_color_snake.style.background = '#CC0000';}
+        else if(color_active[1].classList.contains('active') == true){
+            active_color_snake.style.background = '#FF9933';}
+        else if(color_active[2].classList.contains('active') == true){
+            active_color_snake.style.background = '#FFFF33';}
+        else if(color_active[3].classList.contains('active') == true){
+            active_color_snake.style.background = '#00FF00';}
+        else if(color_active[4].classList.contains('active') == true){
+            active_color_snake.style.background = '#33FF99';}
+        else if(color_active[5].classList.contains('active') == true){
+            active_color_snake.style.background = '#00FFFF';}
+        else if(color_active[6].classList.contains('active') == true){
+            active_color_snake.style.background = '#3333FF';}
+        else if(color_active[7].classList.contains('active') == true){
+            active_color_snake.style.background = '#FF33FF';}
+        else if(color_active[8].classList.contains('active') == true){
+            active_color_snake.style.background = '#FF3399';}
+        else if(color_active[9].classList.contains('active') == true){
+            active_color_snake.style.background = '#FFFFFF';}
+        else if(color_active[10].classList.contains('active') == true){
+            active_color_snake.style.background = '#0000CC';}
+        else if(color_active[11].classList.contains('active') == true){
+            active_color_snake.style.background = '#4C00990';}
+    });
+
+
+    
 
 
 });    
