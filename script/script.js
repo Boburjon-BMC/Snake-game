@@ -22,10 +22,13 @@ document.addEventListener("DOMContentLoaded", function(){
     const snake_user_name_label = document.querySelector('.snake_user_name_label')
     const user_name_input_taxrirlash = document.querySelector('.user_name_input_taxrirlash');
     const new_acont_save  = document.querySelector('.new_acont_save');
+
+
     let user_name;
     let user_name_input_taxrirlashx1;
     let fullScreen = false;
     let time_interval;
+    
 
     const color = [
         " #CC0000",
@@ -371,8 +374,49 @@ document.addEventListener("DOMContentLoaded", function(){
             }, 1000);
         }
         const initGame = () =>{
-                if(gmaeOver) return handleGameOver();
-                let htmlMarkub = `<div class="food" style="grid-area: ${foodX} / ${foodY}"></div>`;
+            if(gmaeOver) return handleGameOver();
+
+                let   htmlMarkub;        
+                
+                if(snake_food_figura1[0].classList.contains('active') == true){
+                    food_color.forEach((e, index) => {
+                        if(e.classList.contains('active')){
+                            htmlMarkub= `<div class="food" style="grid-area: ${foodX} / ${foodY}; background:${color[index]}"></div>`;
+                        }
+                    })
+                
+                }
+                else if(snake_food_figura1[1].classList.contains('active') == true){
+                    food_color.forEach((e, index) => {
+                        if(e.classList.contains('active')){
+                            htmlMarkub= `<div class="food_circle" style="grid-area: ${foodX} / ${foodY}; background:${color[index]}"></div>`;
+                        }
+                    })
+                }
+                else if(snake_food_figura1[2].classList.contains('active') == true){
+                    food_color.forEach((e, index) => {
+                        if(e.classList.contains('active')){
+                            htmlMarkub= `<div class="food_rec" style="grid-area: ${foodX} / ${foodY} ; background:${color[index]}"></div>`;
+                        }
+                    })
+                }
+                else if(snake_food_figura1[3].classList.contains('active') == true){
+                    food_color.forEach((e, index) => {
+                        if(e.classList.contains('active')){
+                            htmlMarkub= `<div class="" style="grid-area: ${foodX} / ${foodY}"><i class="fa-solid fa-apple-whole fa-beat" style="color: ${color[index]}; font-size:30px;"></i></div>`;
+                        }
+                    })
+                }
+                else if(snake_food_figura1[4].classList.contains('active') == true){
+                    food_color.forEach((e, index) => {
+                        if(e.classList.contains('active')){
+                            htmlMarkub= `<div class="" style="grid-area: ${foodX} / ${foodY}; "><i class="fa-solid fa-egg fa-shake" style="color:${color[index]}; font-size:30px;"></i></div>`;
+                        }
+                    })
+                }
+
+
+
                 if(snakeX === foodX && snakeY === foodY){
                         ChangeFoodPostion();
                         snakeBody.push([foodX, foodY]);
@@ -410,7 +454,7 @@ document.addEventListener("DOMContentLoaded", function(){
                                     htmlMarkub += `<div class="snake" style="grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}; background:${color[index]}"></div>`;
                             }
                         })
-                        }
+                    }
                     else if(snake_figura[1].classList.contains('active') == true){
                         color_active.forEach((e, index) => {
                             if(e.classList.contains('active')){
@@ -455,12 +499,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
         };
 
-
-
         ChangeFoodPostion();
-        setIntervalId =  setInterval(initGame, 225);
         document.addEventListener('keydown', functionPlay);
-
+        setIntervalId =  setInterval(initGame, 220);
 
         // menyu_bar
         const menyu_bar = document.querySelector('.menyu_bar');
@@ -581,9 +622,12 @@ document.addEventListener("DOMContentLoaded", function(){
     
     });
 
+    const food_figure = document.querySelector('.food_figure');
+    const snake_food_figura1 = document.querySelectorAll('.snake_figura12');
+    const food_colors1 = document.querySelector('.food_colors');
+    const food_color = document.querySelectorAll('.food_color');
 
     // snake color
-    
     const color_b = document.querySelector('.tab_color');
     const color_btn_click = document.querySelector('.color_btn');
     const active_color_snake = document.querySelector('.active_color_snake');
@@ -615,12 +659,52 @@ document.addEventListener("DOMContentLoaded", function(){
             if(e.classList.contains('active')){
                 active_color_snake.style.background = color[i];     
             }
-        })
+        });
+    });
 
+    function hidetabsContent_snake_food(){
+        snake_food_figura1.forEach((element) =>{
+            element.classList.remove('active');
         });
 
+    }
+    function showTabContent_snake_food(i = 0){
+        snake_food_figura1[i].classList.add('active');
+    }   
 
+    food_figure.addEventListener('click', (element)=>{
+        const target = element.target
+        if(target && target.classList.contains('snake_figura12')){
+            snake_food_figura1.forEach((item,index)=>{
+                if(target == item){
+                    hidetabsContent_snake_food();
+                    showTabContent_snake_food(index)
+                }
+            });
+        }
+    });
 
+    function hidetabsContent_snake_food1(){
+        food_color.forEach(element=>{
+            element.classList.remove('active')
+        });
+    }
+    function showTabContent_snake_food1(i = 0){
+        food_color[i].classList.add('active');
+    }   
+
+    food_colors1.addEventListener('click', (element)=>{
+        const target = element.target;
+        if(target && target.classList.contains('food_color')){
+            food_color.forEach((item,index)=>{
+                if(target == item){
+                    hidetabsContent_snake_food1();
+                    showTabContent_snake_food1(index);
+                }
+            })
+        }
+    });
+    
 
 
 
