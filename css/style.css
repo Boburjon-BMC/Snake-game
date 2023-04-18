@@ -1361,6 +1361,9 @@ ul {
 .setting .setting_bar .setting_tab_window .theme li:hover {
   border: 2px solid #fff;
 }
+.setting .setting_bar .setting_tab_window .theme li.active {
+  border: 2px solid #fff;
+}
 .setting .setting_bar .setting_tab_window .theme li span:nth-child(2) {
   width: 30px;
   height: 30px;
@@ -1969,4 +1972,5 @@ ul {
 }
 .hide{
   display: none;
+  color: rgb(119, 0, 255);
 }

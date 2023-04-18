@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function(){
     let user_name_input_taxrirlashx1;
     let fullScreen = false;
     let time_interval;
-    
+
+
+
 
     const color = [
         " #CC0000",
@@ -501,8 +503,42 @@ document.addEventListener("DOMContentLoaded", function(){
 
         ChangeFoodPostion();
         document.addEventListener('keydown', functionPlay);
-        setIntervalId =  setInterval(initGame, 220);
 
+        let speed =  200;
+        const speed_input = document.querySelector('.speed_input');
+        const btn_speedall = document.querySelectorAll('.btn_speed');
+        const animation_speed = document.querySelector('.animation_speed');
+    
+        function hidetabsContent_snake_speed(){
+            btn_speedall.forEach(element=>{
+                element.classList.remove('active')
+            });
+        }
+        function showTabContent_snake_speed(i = 0){
+            btn_speedall[i].classList.add('active');
+        }   
+    
+    
+        speed_input.addEventListener('click', (element)=> {
+            const target =  element.target;
+            if(target && target.classList.contains('btn_speed')){
+                btn_speedall.forEach((element, index) =>{
+                    if(target == element){
+                        hidetabsContent_snake_speed();
+                        showTabContent_snake_speed(index);
+                        if(index == 0){
+                            localStorage.setItem('speed', "slow")
+                        }
+                        else if(index == 1){
+                            localStorage.setItem('speed', "medium")
+                        }
+                        else if(index == 2){
+                            localStorage.setItem('speed', "fast")
+                        }
+                    }
+                });
+            }
+        });
         // menyu_bar
         const menyu_bar = document.querySelector('.menyu_bar');
         menyu_bar.addEventListener('click', ()=>{
@@ -570,8 +606,25 @@ document.addEventListener("DOMContentLoaded", function(){
         playBar.style.width = '85%';
         playBar.style.height = '90%';
         playBar.style.gridTemplate = `repeat(${snake_bar_table_row}, 1fr) / repeat(${snake_bar_table_columun}, 1fr)`;
-    }
 
+        if(btn_speedall[0].classList.contains('active') == true && localStorage.getItem('speed', 'slow')){
+            setIntervalId =  setInterval(initGame, 290);                
+            animation_speed.style.animation = 'snake_speed 8s linear infinite;';
+            localStorage.setItem("speed", 'slow');
+        }
+        else  if(btn_speedall[1].classList.contains('active') == true  && localStorage.getItem('speed', 'medium')){
+            setIntervalId =  setInterval(initGame, 200);    
+            animation_speed.style.animation = 'snake_speed 5s linear infinite;'
+            localStorage.setItem("speed", 'medium');
+            
+        }
+         else if(btn_speedall[2].classList.contains('active') == true && localStorage.getItem('speed', 'fast')){
+            setIntervalId =  setInterval(initGame, 120);    
+            animation_speed.style.animation = 'snake_speed 2s linear infinite;'
+            localStorage.setItem("speed", 'medium');
+            
+        }
+    }
     // snake fegura
     const snake_btn_figura = document.querySelector('.snake_btn_figura');
     const snake_bar_figure = document.querySelector('.snake_bar_figure');
@@ -704,9 +757,113 @@ document.addEventListener("DOMContentLoaded", function(){
             })
         }
     });
+
+    // <------------!!!!!!---------!!!!!!-------->
+    // snake setting
+    // <------------!!!!!!---------!!!!!!-------->
+    const theme = document.querySelector('.theme');
+    const theme_save = document.querySelector('.theme_save');
+    const theme_item = document.querySelectorAll('.theme_item');
+
+
+    function hidetabsContent_snake_theme(){
+        theme_item.forEach(element=>{
+            element.classList.remove('active')
+        });
+    }
+    function showTabContent_snake_theme(i = 0){
+        theme_item[i].classList.add('active');
+    }   
+    theme.addEventListener('click', (e)=>{
+        const target = e.target;
+        if(target && target.classList.contains('theme_item')){
+            theme_item.forEach((item, index)=>{
+                if(target == item){
+                    hidetabsContent_snake_theme();
+                    showTabContent_snake_theme(index)
+                }    
+            });
+    }
+    });
+
+    const fon_theme_color = document.querySelectorAll('.fon_theme_color');
+    const text_js = document.querySelectorAll('.text_js');
+    const btn_input_color_js = document.querySelectorAll('.btn_input_color_js');
+    theme_save.addEventListener('click',()=>{
+        if(theme_item[0].classList.contains('active') == true){
+            fon_theme_color.forEach(e=>{
+                e.style.background = '#eee'
+            })
+            text_js.forEach(e=>{
+                e.style.color = '#000'
+            })
+            btn_input_color_js.forEach(e=>{
+                e.style.background = '#082dd3'
+            });
+            localStorage.setItem('theme', 'white');
+        }
+        else if(theme_item[1].classList.contains('active') == true){
+            fon_theme_color.forEach(e=>{
+                e.style.background = '#000'
+            })
+            text_js.forEach(e=>{
+                e.style.color = '#fff'
+            })
+            btn_input_color_js.forEach(e=>{
+                e.style.background = ' rgb(119, 0, 255)'
+            });
+            localStorage.setItem('theme', 'dark');
+        }
+        else if(theme_item[2].classList.contains('active') == true){
+            fon_theme_color.forEach(e=>{
+                e.style.background = ''
+            })
+            text_js.forEach(e=>{
+                e.style.color = ''
+            })
+            btn_input_color_js.forEach(e=>{
+                e.style.background = ''
+            });
+            localStorage.setItem('theme', 'defaut');
+        }
+    })
+    if(localStorage.getItem('theme') == 'dark'){
+        fon_theme_color.forEach(e=>{
+            e.style.background = '#000'
+        })
+        text_js.forEach(e=>{
+            e.style.color = '#fff'
+        })
+        btn_input_color_js.forEach(e=>{
+            e.style.background = ' rgb(119, 0, 255)'
+        });
+        localStorage.setItem('theme', 'dark');
+    }
+    else if(localStorage.getItem('theme') == 'white'){
+        fon_theme_color.forEach(e=>{
+            e.style.background = '#eee'
+        })
+        text_js.forEach(e=>{
+            e.style.color = '#000'
+        })
+        btn_input_color_js.forEach(e=>{
+            e.style.background = '#082dd3'
+        });
+        localStorage.setItem('theme', 'white');
+    }
+    else if(localStorage.getItem('theme') == 'defaut'){
+        fon_theme_color.forEach(e=>{
+            e.style.background = ''
+        })
+        text_js.forEach(e=>{
+            e.style.color = ''
+        })
+        btn_input_color_js.forEach(e=>{
+            e.style.background = ''
+        });
+        localStorage.setItem('theme', 'defaut');
+    }
     
-
-
 
 });    
     
